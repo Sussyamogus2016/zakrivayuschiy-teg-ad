@@ -9,7 +9,7 @@
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-  
+
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
@@ -158,17 +158,3 @@
       left: 4px;
     }
   }
-
-button[type="button"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-button:focus {
-  outline: none;
-}
-
-button:focus-visible {
-  box-shadow: 2px 2px 0 0 var(--border-color);
-}
