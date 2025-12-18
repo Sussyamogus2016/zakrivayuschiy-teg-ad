@@ -39,3 +39,36 @@ function setButtonText(heart, button) {
     );
   }
 }
+function closeDialog() {
+    const dialog = document.getElementById('dialog-id');
+    if (dialog) {
+        dialog.close();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dialog = document.getElementById('dialog-id');
+    const saveButton = document.querySelector('.button-save');
+    const rememberButton = document.querySelector('.button-remember');
+    
+    if (saveButton) {
+        saveButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            closeDialog();
+        });
+    }
+    
+    if (rememberButton) {
+        rememberButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dialog.showModal();
+        });
+    }
+    
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => e.preventDefault());
+    });
+});
