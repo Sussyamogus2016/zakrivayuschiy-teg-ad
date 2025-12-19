@@ -28,23 +28,26 @@
   font-family: var(--main-font), sans-serif;
   font-variation-settings: 'wght' 400;
 
-  background-image: repeating-linear-gradient(
-      to bottom,
-      var(--bg-color) 0px 2px,
+  background-image: 
+    repeating-linear-gradient(
+      to right,
+      var(--bg-stripe-color) 0 2px,
       transparent 2px 4px
     ),
     repeating-linear-gradient(
-      to right,
-      var(--bg-color) 0 2px,
+      to bottom,
+      var(--bg-stripe-color) 0 2px,
       transparent 2px 4px
     ),
     linear-gradient(
-      180deg,
-      var(--linear-gradient-first) 0%,
-      var(--linear-gradient-second) 100%
+      to bottom,
+      var(--bg-gradient-start),
+      var(--bg-gradient-end)
     );
+    
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: fixed; 
+  background-position: center;
 }
 
 .header {
@@ -58,7 +61,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 12px;
+  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
 
   border: 2px solid var(--border-color);
   background-color: var(--bg-color);
@@ -83,7 +86,6 @@
 .header__description {
   font-family: var(--accent-font), sans-serif;
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
-  margin-block-end: 4px;
 }
 
 .card {
